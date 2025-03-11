@@ -10,9 +10,9 @@ const Candidates = () => {
   if (error) return <h2>Something went wrong</h2>;
 
   return (
-    <div className="w-screen d-flex justify-items-center items-center">
+    <div className="w-screen d-flex justify-items-center items-center mb-5">
       <h2 className="text-2xl m-4 font-bold">Candidates</h2>
-      <Suspense fallback={<h2>Loading ...</h2>}>
+      <Suspense fallback={<h2>Loading Candidates...</h2>}>
         {data && <CandidateList candidateData={data} />}
       </Suspense>
     </div>

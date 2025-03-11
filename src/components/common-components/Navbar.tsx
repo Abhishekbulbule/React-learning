@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -29,45 +29,61 @@ const Navbar = () => {
           <div className="lg:!flex lg:flex-auto max-lg:fixed max-lg:bg-dark max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
             <ul className="lg:flex lg:gap-x-8 max-lg:space-y-2">
               <li className="mb-6 hidden max-lg:block">
-                <Link to="/">
+                <NavLink to="/">
                   <img
                     src="https://readymadeui.com/readymadeui.svg"
                     alt="logo"
                     className="w-36"
                   />
-                </Link>
+                </NavLink>
               </li>
               <li className="max-lg:border-b max-lg:py-3">
-                <Link
+                <NavLink
                   to="/"
-                  className="hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                      : "hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                  }
                 >
                   Candidates
-                </Link>
+                </NavLink>
               </li>
               <li className="max-lg:border-b max-lg:py-3">
-                <Link
+                <NavLink
                   to="/shop"
-                  className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                      : "hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                  }
                 >
                   Shop
-                </Link>
+                </NavLink>
               </li>
               <li className="max-lg:border-b max-lg:py-3">
-                <Link
-                  to="/view"
-                  className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                <NavLink
+                  to="/watch"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                      : "hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                  }
                 >
-                  View
-                </Link>
+                  Videos
+                </NavLink>
               </li>
               <li className="max-lg:border-b max-lg:py-3">
-                <Link
-                  to="/about"
-                  className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                <NavLink
+                  to="/add"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
+                      : "hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
+                  }
                 >
-                  About
-                </Link>
+                  Add
+                </NavLink>
               </li>
             </ul>
           </div>

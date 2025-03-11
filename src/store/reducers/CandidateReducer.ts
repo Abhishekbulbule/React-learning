@@ -14,7 +14,7 @@ export const CandidateSlice = createSlice({
       state = action.payload;
     },
     deleteCandidate: (state, action: PayloadAction<string>) => {
-      state.filter((val) => val.id != action.payload);
+      return state.filter((val) => val.id != action.payload);
     },
   },
 });
