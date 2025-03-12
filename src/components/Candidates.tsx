@@ -2,11 +2,18 @@ import React, { Suspense } from "react";
 import useFetch from "../hooks/useFetch";
 import { API_GET_CANDIDATES } from "../utils/helper";
 import { Candidate } from "../utils/utils.type";
+import useQueryhook from "../hooks/useQueryhook";
 
 const CandidateList = React.lazy(() => import("./CandidateList"));
 const Candidates = () => {
-  const { data, error } = useFetch<Candidate[]>(API_GET_CANDIDATES, true);
+  console.log("Candidates component rendered");
+  // const { data, error } = useFetch<Candidate[]>(API_GET_CANDIDATES, true);
+  const { data, error } = useQueryhook<Candidate[]>(
+    API_GET_CANDIDATES,
+    "candidates"
+  );
 
+  console.log("data", data);
   if (error) return <h2>Something went wrong</h2>;
 
   return (
@@ -19,4 +26,4 @@ const Candidates = () => {
   );
 };
 
-export default Candidates;
+export default React.memo(Candidates);

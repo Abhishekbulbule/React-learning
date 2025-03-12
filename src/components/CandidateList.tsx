@@ -1,7 +1,9 @@
+import React from "react";
 import Card from "./common-components/Card";
 import { Candidate, Profile } from "../utils/utils.type";
 
 const CandidateList = ({ candidateData }: { candidateData: Candidate[] }) => {
+  console.log("CandidateList component rendered");
   return (
     <div className="flex flex-row justify-center flex-wrap gap-5">
       {candidateData.map((candidate) => {
@@ -18,4 +20,4 @@ const CandidateList = ({ candidateData }: { candidateData: Candidate[] }) => {
   );
 };
 
-export default CandidateList;
+export default React.memo(CandidateList);

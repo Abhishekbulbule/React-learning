@@ -21,7 +21,7 @@ const VideoList: React.FC<VideoListProps> = ({ videos }) => {
   return (
     <div>
       {videos.length > 0 ? (
-        videos.map((video, index) => (
+        videos.map((video) => (
           <iframe
             width="460"
             height="315"

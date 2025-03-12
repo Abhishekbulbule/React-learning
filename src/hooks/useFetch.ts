@@ -10,6 +10,7 @@ const useFetch = <T>(
   const [error, setError] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
+
   useEffect(() => {
     setIsLoading(true);
 
